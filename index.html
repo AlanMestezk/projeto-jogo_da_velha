@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da velha</title>
+    <link rel="stylesheet" href="./src/css/style.css">
+</head>
+<body>
+    <div class="div-title">
+        <h1 class="title">JOGO DA VELHA</h1>
+
+    <div class="board x" data-board>
+        <div class="cell" data-cell></div>
+        <div class="cell"data-cell></div>
+        <div class="cell"data-cell></div>
+        <div class="cell"data-cell></div>
+        <div class="cell"data-cell></div>
+        <div class="cell"data-cell></div>
+        <div class="cell"data-cell></div>
+        <div class="cell"data-cell></div>
+        <div class="cell"data-cell></div>
+    </div>
+
+    <div class="winning-message" data-winning-message>
+        <p class="winning-message-text" data-winning-message-text>X venceu</p>
+        <button class="winning-message-button" data-restart-button>
+            Reiniciar!
+          </button>
+    </div>
+
+    <div class="regras-titulo">
+        <h5 class="titulo-regras">REGRAS:</h5>
+    </div>
+    
+    <div class="regras">
+        <ol class="regras-text">
+            <li class="regras-a-seguir">clique em qualquer campo para começar</li>
+            <li class="regras-a-seguir">o primeiro a fazer uma sequência de 3 simbolos iguais vence</li>
+            <li class="regras-a-seguir">jogador 1 é o "x", jogador 2 é o "o"</li>
+        </ol>
+    </div>
+
+
+    <script src="./src/js/script.js"></script>
+</body>
+</html>

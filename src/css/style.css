@@ -1,0 +1,182 @@
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 90vh;
+    width: 100vw;
+    background: linear-gradient(90deg,
+    rgb(185, 65, 111)0%,
+    rgb(255, 0, 64)100%);
+}
+
+.div-title{
+    margin-top: 2%;
+}
+
+.title{
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: bolder;
+    color: aliceblue;
+}
+
+.board{
+    margin-top: 3%;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3, auto);
+}
+
+/*Estilizando as células*/
+.cell{
+    width: 120px;
+    height: 120px;
+    border: 1px solid aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cell.x, .cell.circle{
+    cursor:not-allowed
+}
+/*==============================*/
+
+/*tirando as bordas laterais*/
+.cell:nth-child(1),
+.cell:nth-child(2),
+.cell:nth-child(3){
+    border-top: none;
+}
+
+.cell:nth-child(3),
+.cell:nth-child(6),
+.cell:nth-child(9){
+    border-right: none;
+}
+
+.cell:nth-child(1),
+.cell:nth-child(4),
+.cell:nth-child(7){
+    border-left: none;
+}
+
+.cell:nth-child(7),
+.cell:nth-child(8),
+.cell:nth-child(9){
+    border-bottom: none;
+}
+/*===========================*/
+
+/*Estilizando o 'x' */
+.cell.x::before,
+.cell.x::after{
+    content: "";
+    height: calc(160px * 0.15);
+    width: calc(90px * 0.9);
+    background-color: aliceblue;
+    position:absolute;
+}
+
+.cell.x::before,
+.board.x .cell:not(.x):not(.circle):hover::before{
+    transform: rotate(40deg);
+}
+
+.cell.x::after,
+.board.x .cell:not(.x):not(.circle):hover::after{
+    transform: rotate(-45deg) ;
+}
+/*=============================*/
+
+/*Estilizando o circulo*/
+.cell.circle::before,
+.cell.circle::after{
+    content: "";
+    height: calc(90px * 0.9);
+    width: calc(90px * 0.9);
+    background-color: aliceblue;
+    position:absolute;
+    border-radius: 50% ;
+}
+/*=============================*/
+
+/*mensagem para o ganhador*/
+.winning-message{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(53, 1, 1, 0.9);
+    flex-direction: column;
+}
+
+.winning-message button{
+    font-size: 2.5rem;
+    background: linear-gradient(90deg,
+    rgb(185, 65, 111)0%,
+    rgb(255, 0, 64)100%);
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 16px;
+    color: aliceblue;
+}
+
+.winning-message button:hover{
+    color: rgb(255, 47, 47);
+    background: aliceblue;
+}
+
+.winning-message-text{
+    font-family: sans-serif;
+    color: aliceblue;
+    font-size: 5rem;
+}
+
+.show-winning-message{
+    display: flex;
+}
+
+
+.regras-titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6%;
+}
+
+.titulo-regras{
+    font-family: sans-serif;
+    font-weight: bolder;
+    list-style: none;
+    color: aliceblue;
+}
+
+.regras{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+}
+
+
+.regras-text{
+    font-family: sans-serif;
+    color: aliceblue;
+}
+
